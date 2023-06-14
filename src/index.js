@@ -11,5 +11,8 @@ function Greeting () {
 }
 root.render(<div>
     <Greeting />
+    <Greeting />
+    <Greeting />
+    <Greeting />
 </div>)
 
