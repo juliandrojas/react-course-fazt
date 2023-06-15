@@ -1,16 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 //Importamos Component.js
-import { Component, UserCard } from './Component';
-import Product, { Navbar } from './Product';
+//import { Component, UserCard } from './Component';
+//import Product, { Navbar } from './Product';
+//import Greeting from "./Greeting";
+import { UserCard } from "./Component";
 //Seleccionamos el DOM y lo guardamos en una constante
 const root = ReactDOM.createRoot(document.getElementById("root"));
+/*
 //Crear componentes a partir de funciones
 function Greeting() {
   //Para interpretar código JS dentro de HTML se usan las llaves
   const name = "fazt";
   return <h1>{name}</h1>;
-}
+}*/
 function IsMarried() {
   const married = false;
   /*if(married) {
@@ -56,14 +59,29 @@ function PrimeraFuncion() {
 //Usamos Fragment para evitar los divs
 root.render(
   <>
-    <Greeting />
-    <IsMarried />
-    <Objects />
-    <IsMarriedString />
-    <PrimeraFuncion />
-    <Component />
-    <UserCard />
-    <Product />
-    <Navbar />
+    {/* <Greeting title="Hola Mundo" name="Joe" />
+    <Greeting title="Hola React" name="Ryan" />
+    <Greeting title="Hola JSX" />
+    <Greeting title="Hola JavaScript" />
+    <Greeting title="Hola Fazt" /> */}
+    {/* <Greeting x = "bye"/>
+    <Greeting y = {30}/>
+    <Greeting z = {true} />
+    <Greeting a = {[1, 2, 3]} /> */}
+    <UserCard
+      name="Ryan Ray"
+      amount={3000}
+      married={true}
+      points={[99, 33.3, 22.2]}
+      address={{ street: "123 Main Street", city: "New York" }}
+      greet = {function(){ alert("Hello") }}
+    />
+    <UserCard
+      name="Joe McMillan"
+      amount={1000}
+      married={false}
+      points={[100, 20]}
+      address={{ street: "Avenue Some 123", city: "New York" }} 
+    />
   </>
 );
