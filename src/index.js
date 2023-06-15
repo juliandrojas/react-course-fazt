@@ -1,5 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+//Importamos Component.js
+import { Component, UserCard } from './Component';
+import Product, { Navbar } from './Product';
 //Seleccionamos el DOM y lo guardamos en una constante
 const root = ReactDOM.createRoot(document.getElementById("root"));
 //Crear componentes a partir de funciones
@@ -48,6 +51,8 @@ function PrimeraFuncion() {
   }
   return <h1>{sumar(10, 30)}</h1>;
 }
+//Función importada
+
 //Usamos Fragment para evitar los divs
 root.render(
   <>
@@ -56,5 +61,9 @@ root.render(
     <Objects />
     <IsMarriedString />
     <PrimeraFuncion />
+    <Component />
+    <UserCard />
+    <Product />
+    <Navbar />
   </>
 );
