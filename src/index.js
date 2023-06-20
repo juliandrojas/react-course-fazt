@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+//Importamos Post.js
+import { Post } from './Post';
+//Seleccionamos el DOM y lo guardamos en una constante
+const root = ReactDOM.createRoot(document.getElementById("root"));
+//Arreglo de usuarios
+const users = [
+  {
+    id: 1, 
+    name: 'Ryan Ray',
+    image: 'https://robohash.org/user1'
+  },
+  {
+    id: 2, 
+    name: 'Joe',
+    image: 'https://robohash.org/user2'
+  },
+  {
+    id: 3, 
+    name: 'Marcos',
+    image: 'https://robohash.org/user3'
+  }
+]
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+//Usamos Fragment para evitar los divs
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <>
+    {users.map((user, i) => {
+      return (
+        <div key={i}>
+          <h1> {user.name} </h1>
+          <img src={user.image}/>
+        </div>
+      );
+    })}
+  </>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
